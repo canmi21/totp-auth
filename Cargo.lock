@@ -144,7 +144,7 @@ dependencies = [
 
 [[package]]
 name = "totp-auth"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "hmac",
  "sha1",
