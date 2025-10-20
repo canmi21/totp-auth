@@ -1,0 +1,28 @@
+[package]
+name = "totp-auth"
+version = "1.0.0"
+edition = "2024"
+description = "Secure multi-seed TOTP generator and verifier with WebAssembly support."
+license = "MIT"
+repository = "https://github.com/canmi21/totp-auth"
+readme = "README.md"
+keywords = ["server", "totp", "api", "auth"]
+categories = ["network-programming", "web-programming"]
+
+[lib]
+name = "totp"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+hmac = "0.12"
+sha1 = "0.10"
+wasm-bindgen = { version = "0.2", optional = true }
+
+[features]
+default = []
+wasm = ["wasm-bindgen"]
+
+[[example]]
+name = "verify"
+path = "examples/verify.rs"
